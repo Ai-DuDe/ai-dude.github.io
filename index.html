@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-jo7ofJ1T1Fe4yWv1Fs71fuoCtTU7V/JsieeyREX3ycQ='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-uPE7zJEU8Jlq1bMIlssmso2PhBvfyx7/xCJv2ArMQOs=' 'sha256-i8ZGiCZqyyrb3BOD1oRv9R/bp38clcjLGva71RHg41I='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23EDEDE8'%3ED%3C/text%3E%3C/svg%3E">
@@ -740,24 +740,104 @@ dialog.cmodal[open]{animation:cmin .22s var(--ease-out)}
 }
 
 /* ---------- Light Link ---------- */
-.ll-demo{display:grid;gap:clamp(14px,2vw,20px);padding:clamp(16px,2.4vw,24px)}
-.ll-stage{display:flex;align-items:center;gap:clamp(8px,2vw,18px)}
-.ll-dev{flex:none;display:grid;place-items:center;width:clamp(52px,10vw,76px);aspect-ratio:1;border-radius:16px;background:var(--tile);border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:clamp(.78rem,1.8vw,.95rem)}
-.ll-dot{--on:0;width:clamp(16px,3vw,22px);aspect-ratio:1;border-radius:50%;background:color-mix(in srgb,var(--pink) calc(var(--on)*100%),var(--line));box-shadow:0 0 calc(var(--on)*26px) calc(var(--on)*7px) rgba(var(--acc-rgb),calc(var(--on)*.65));animation:llblink 14.84s steps(1,end) infinite}
-@property --on{syntax:"<number>";inherits:false;initial-value:0}
-@keyframes llblink{0.000%{--on:1}0.809%{--on:0}1.617%{--on:1}2.426%{--on:0}3.235%{--on:1}4.043%{--on:0}4.852%{--on:1}5.660%{--on:0}6.469%{--on:1}7.278%{--on:0}8.086%{--on:1}8.895%{--on:0}9.704%{--on:1}10.512%{--on:0}11.321%{--on:1}12.129%{--on:0}13.747%{--on:1}14.555%{--on:0}15.364%{--on:1}16.981%{--on:0}18.598%{--on:1}20.216%{--on:0}21.024%{--on:1}21.833%{--on:0}23.450%{--on:1}25.067%{--on:0}25.876%{--on:1}26.685%{--on:0}27.493%{--on:1}28.302%{--on:0}29.919%{--on:1}31.536%{--on:0}33.154%{--on:1}34.771%{--on:0}36.388%{--on:1}37.197%{--on:0}38.005%{--on:1}38.814%{--on:0}39.623%{--on:1}40.431%{--on:0}41.240%{--on:1}42.049%{--on:0}42.857%{--on:1}43.666%{--on:0}44.474%{--on:1}45.283%{--on:0}46.092%{--on:1}46.900%{--on:0}47.709%{--on:1}49.326%{--on:0}50.943%{--on:1}51.752%{--on:0}52.561%{--on:1}54.178%{--on:0}55.795%{--on:1}56.604%{--on:0}57.412%{--on:1}59.030%{--on:0}60.647%{--on:1}61.456%{--on:0}62.264%{--on:1}63.073%{--on:0}63.881%{--on:1}64.690%{--on:0}65.499%{--on:1}67.116%{--on:0}68.733%{--on:1}69.542%{--on:0}70.350%{--on:1}71.968%{--on:0}73.585%{--on:1}74.394%{--on:0}75.202%{--on:1}76.819%{--on:0}77.628%{--on:1}78.437%{--on:0}79.245%{--on:1}80.054%{--on:0}81.671%{--on:1}83.288%{--on:0}84.097%{--on:1}84.906%{--on:0}85.714%{--on:1}86.523%{--on:0}88.140%{--on:1}89.757%{--on:0}90.566%{--on:0}}
-.ll-beam{position:relative;flex:1;min-width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--line),var(--faint),var(--line))}
-.ll-beam::after{content:"light";position:absolute;left:50%;top:-1.5em;transform:translateX(-50%);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.ll-out{color:var(--text);font-weight:800;letter-spacing:.02em}
-.ll-frame{display:flex;gap:4px}
-.ll-frame span{flex:var(--w) 1 0;min-width:0;padding:.55rem .15rem;text-align:center;border-radius:9px;background:var(--tile);border:1px solid var(--line);font-size:clamp(.62rem,1.6vw,.8rem);font-weight:700;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ll-frame span:nth-child(4){color:var(--text);border-color:rgba(var(--acc-rgb),.45)}
-.ll-legend{margin:0;font-size:.84rem;color:var(--faint)}
-.ll-shot{display:block;width:100%;height:auto;border-top:1px solid var(--line)}
-.ll-cap{margin:0;padding:10px 16px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
-.tile.wide{grid-column:1/-1;min-height:0}
-#lightlink .pname{overflow-wrap:anywhere}
-@media (prefers-reduced-motion:reduce){.ll-dot{animation:none;--on:1}}
+.ll-phone{display:grid;place-items:center;padding:clamp(14px,2.4vw,24px)}
+.ll-device{width:min(100%,340px);padding:12px;border-radius:36px;background:var(--tile);border:1px solid var(--line);box-shadow:0 24px 50px -30px var(--shadow)}
+.ll-notch{display:flex;justify-content:space-between;align-items:center;padding:2px 18px 10px}
+.ll-notch i{display:block;width:12px;height:12px;border-radius:50%;background:var(--line)}
+.ll-flash{--on:0;display:block;width:14px;height:14px;border-radius:50%;background:color-mix(in srgb,var(--pink) calc(var(--on)*100%),var(--line));box-shadow:0 0 calc(var(--on)*24px) calc(var(--on)*7px) rgba(var(--acc-rgb),calc(var(--on)*.7))}
+.ll-scr{display:grid;gap:14px;padding:16px;border-radius:26px;background:var(--bg);border:1px solid var(--line)}
+.ll-lab{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.ll-in{width:100%;min-height:44px;font:inherit;font-size:1.05rem;color:var(--text);background:var(--tile);border:1px solid var(--line);border-radius:12px;padding:.65rem .9rem}
+.ll-in:focus-visible,.ll-chip:focus-visible,.ll-tog:focus-visible,.ll-step button:focus-visible,.ll-send:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+.ll-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ll-chip{appearance:none;font:inherit;font-weight:700;font-size:.92rem;min-width:40px;min-height:40px;padding:0 .6rem;border-radius:11px;border:1px solid var(--line);background:var(--tile);color:var(--muted);cursor:pointer;transition:transform .12s}
+.ll-chip:active{transform:scale(.95)}
+.ll-chip[aria-pressed="true"]{background:var(--pink);color:var(--on-pink);border-color:transparent}
+.ll-chip:disabled,.ll-in:disabled{opacity:.55;cursor:default}
+.ll-ring{position:relative;width:clamp(104px,34vw,132px);aspect-ratio:1;margin:0 auto}
+.ll-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ll-trk{fill:none;stroke:var(--line);stroke-width:8}
+.ll-bar{fill:none;stroke:var(--pink);stroke-width:8;stroke-linecap:round;stroke-dasharray:339.3;stroke-dashoffset:339.3}
+.ll-mid{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ll-mid b{font-size:1.25rem;line-height:1.1}
+.ll-mid small{font-size:.72rem;color:var(--faint)}
+.ll-send{width:100%;min-height:48px;justify-content:center;text-align:center}
+.ll-note{margin:0;min-height:2.7em;font-size:.84rem;line-height:1.35;color:var(--muted);text-align:center}
+
+.ll-rx{margin-top:clamp(22px,3.4vw,40px)}
+.ll-sim{margin-left:auto;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.ll-rxgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(14px,2vw,22px);padding:clamp(14px,2vw,22px)}
+.ll-left,.ll-right{min-width:0;display:grid;gap:12px;align-content:start}
+.ll-view{display:block;width:100%;aspect-ratio:16/9;border-radius:14px;background:#050505;border:1px solid var(--line)}
+.ll-ctrl{display:flex;flex-wrap:wrap;gap:8px}
+.ll-tog{appearance:none;font:inherit;font-weight:700;font-size:.84rem;min-height:40px;padding:0 .9rem;border-radius:999px;border:1px solid var(--line);background:var(--tile);color:var(--muted);cursor:pointer}
+.ll-tog[aria-pressed="true"]{background:var(--pink);color:var(--on-pink);border-color:transparent}
+.ll-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ll-pill{display:inline-block;padding:.35rem .85rem;border-radius:999px;font-weight:800;font-size:.92rem;letter-spacing:.04em;border:1.5px solid var(--faint);color:var(--muted)}
+.ll-pill[data-s="LOCKED"]{background:var(--pink);color:var(--on-pink);border-color:transparent}
+.ll-pill[data-s="DEGRADED"]{border-color:var(--text);color:var(--text)}
+.ll-pill[data-s="LOST"]{border-style:dashed;border-color:var(--text);color:var(--text)}
+.ll-q{display:grid;justify-items:end;line-height:1}
+.ll-q b{font-size:1.5rem}.ll-q small{font-size:.7rem;color:var(--faint)}
+.ll-qbar{height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.ll-qbar i{display:block;height:100%;width:0;border-radius:8px;background:var(--pink);transition:width .25s}
+.ll-rate{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:.6rem .8rem;border-radius:14px;background:var(--tile);border:1px solid var(--line)}
+.ll-rate b{display:block;font-size:.92rem}.ll-rate small{color:var(--faint);font-size:.74rem}
+.ll-step{display:flex;align-items:center;gap:6px}
+.ll-step button{appearance:none;width:40px;height:40px;border-radius:11px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:1.25rem;font-weight:700;cursor:pointer}
+.ll-step button:active{transform:scale(.94)}
+.ll-step output{min-width:4.2em;text-align:center;font-weight:800}
+.ll-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0}
+.ll-stats div{padding:.5rem .7rem;border-radius:12px;background:var(--tile);border:1px solid var(--line)}
+.ll-stats dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.ll-stats dd{margin:0;font-weight:800;font-size:1.05rem}
+.ll-trace{display:block;width:100%;height:84px;border-radius:12px;background:var(--tile);border:1px solid var(--line)}
+.ll-log{list-style:none;margin:0;padding:0;display:grid;gap:6px;min-height:3.2em}
+.ll-log li{display:flex;gap:10px;align-items:center;padding:.45rem .7rem;border-radius:11px;background:var(--tile);border:1px solid var(--line);font-size:.95rem;min-width:0}
+.ll-log li span{flex:none;padding:.1rem .5rem;border-radius:7px;font-size:.7rem;font-weight:800;letter-spacing:.06em;background:var(--pink);color:var(--on-pink)}
+.ll-log li.f span{background:none;border:1px dashed var(--text);color:var(--text)}
+.ll-log li b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ll-log li small{margin-left:auto;flex:none;color:var(--faint)}
+.ll-log .ll-empty{color:var(--faint);border-style:dashed}
+.ll-hint{margin:0;min-height:2.6em;font-size:.84rem;line-height:1.35;color:var(--muted)}
+@media (max-width:860px){.ll-rxgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.ll-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.ll-log li{flex-wrap:wrap}}
+
+/* ---------- More projects (replaces the single "Next project" link) ---------- */
+.case-next{margin-top:clamp(48px,7vw,90px)}
+.case-next-h{margin:0 0 14px;font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.case-next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(12px,1.8vw,20px)}
+.case-next-grid a{align-items:flex-start;gap:6px;padding:clamp(18px,2.4vw,28px);min-width:0}
+.case-next-grid b{font-size:clamp(1.9rem,3.6vw,3rem);overflow-wrap:anywhere}
+.case-next-grid span{font-size:.9rem;color:var(--muted)}
+
+
+/* ---------- Light Link tile on the work grid ---------- */
+.tile.wide{grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;gap:clamp(18px,4vw,48px)}
+.tile.wide .ll-tx{flex:1 1 55%;min-width:0;display:flex;flex-direction:column;gap:.5rem;align-self:stretch}
+.tile.wide .more{margin-top:auto}
+.ll-vis{flex:1 1 38%;min-width:0;display:flex;align-items:center;gap:clamp(8px,1.6vw,16px);padding:clamp(14px,2vw,22px);border-radius:18px;background:var(--tile);border:1px solid var(--line)}
+.ll-d{flex:none;width:clamp(16px,2.4vw,22px);aspect-ratio:1;border-radius:50%;background:var(--line);animation:lltile 12.60s steps(1,end) infinite}
+.ll-b{flex:1;min-width:20px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--line),var(--faint),var(--line))}
+.ll-r{flex:none;display:grid;place-items:center;min-width:clamp(48px,7vw,64px);aspect-ratio:1;border-radius:14px;border:1px solid var(--line);background:var(--bg);font-weight:800;font-size:clamp(.95rem,1.8vw,1.2rem)}
+@keyframes lltile{0.000%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}0.794%{background:var(--line);box-shadow:none}1.587%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}2.381%{background:var(--line);box-shadow:none}3.175%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}3.968%{background:var(--line);box-shadow:none}4.762%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}5.556%{background:var(--line);box-shadow:none}6.349%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}7.143%{background:var(--line);box-shadow:none}7.937%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}8.730%{background:var(--line);box-shadow:none}9.524%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}10.317%{background:var(--line);box-shadow:none}11.111%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}11.905%{background:var(--line);box-shadow:none}13.492%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}14.286%{background:var(--line);box-shadow:none}15.079%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}16.667%{background:var(--line);box-shadow:none}18.254%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}19.841%{background:var(--line);box-shadow:none}20.635%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}21.429%{background:var(--line);box-shadow:none}23.016%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}24.603%{background:var(--line);box-shadow:none}25.397%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}26.190%{background:var(--line);box-shadow:none}26.984%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}27.778%{background:var(--line);box-shadow:none}29.365%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}30.952%{background:var(--line);box-shadow:none}32.540%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}34.127%{background:var(--line);box-shadow:none}35.714%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}36.508%{background:var(--line);box-shadow:none}37.302%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}38.095%{background:var(--line);box-shadow:none}38.889%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}39.683%{background:var(--line);box-shadow:none}40.476%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}41.270%{background:var(--line);box-shadow:none}42.063%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}42.857%{background:var(--line);box-shadow:none}43.651%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}44.444%{background:var(--line);box-shadow:none}45.238%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}46.032%{background:var(--line);box-shadow:none}46.825%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}48.413%{background:var(--line);box-shadow:none}50.000%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}50.794%{background:var(--line);box-shadow:none}51.587%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}53.175%{background:var(--line);box-shadow:none}54.762%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}55.556%{background:var(--line);box-shadow:none}56.349%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}57.937%{background:var(--line);box-shadow:none}59.524%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}60.317%{background:var(--line);box-shadow:none}61.111%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}61.905%{background:var(--line);box-shadow:none}62.698%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}63.492%{background:var(--line);box-shadow:none}64.286%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}65.873%{background:var(--line);box-shadow:none}67.460%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}68.254%{background:var(--line);box-shadow:none}69.048%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}70.635%{background:var(--line);box-shadow:none}72.222%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}73.016%{background:var(--line);box-shadow:none}73.810%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}75.397%{background:var(--line);box-shadow:none}76.190%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}76.984%{background:var(--line);box-shadow:none}77.778%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}78.571%{background:var(--line);box-shadow:none}80.159%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}81.746%{background:var(--line);box-shadow:none}82.540%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}83.333%{background:var(--line);box-shadow:none}84.127%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}84.921%{background:var(--line);box-shadow:none}86.508%{background:var(--pink);box-shadow:0 0 18px 5px rgba(var(--acc-rgb),.65)}88.095%{background:var(--line);box-shadow:none}88.889%{background:var(--line);box-shadow:none}}
+@media (max-width:640px){.tile.wide{flex-direction:column;align-items:stretch}.tile.wide .ll-tx{align-self:auto}}
+@media (prefers-reduced-motion:reduce){.ll-d{animation:none;background:var(--pink)}}
+
+/* ---------- Scroll thumb (replaces the native scrollbar) ---------- */
+html{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none}
+.sbar{position:fixed;z-index:45;right:calc(env(safe-area-inset-right,0px) + 4px);top:clamp(84px,12vh,120px);bottom:clamp(96px,14vh,140px);width:26px;cursor:pointer;touch-action:none;opacity:.5;transition:opacity .25s}
+.sbar.on,.sbar:hover,.sbar.drag{opacity:1}
+.sbar::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;border-radius:2px;background:var(--line)}
+.sbar-thumb{position:absolute;left:50%;top:0;width:18px;height:32px;margin-left:-9px;border-radius:10px;border:1.5px solid var(--text);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);cursor:grab;touch-action:none;will-change:transform}
+.sbar.drag .sbar-thumb{cursor:grabbing}
+.sbar-thumb i{position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--pink)}
+.sbar.mv .sbar-thumb i{animation:sbwheel .7s ease-in-out infinite}
+@keyframes sbwheel{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(5px);opacity:.35}}
+.sbar[hidden]{display:none}
+@media (max-width:560px){.sbar{width:22px;top:96px;bottom:150px}}
+@media (prefers-reduced-motion:reduce){.sbar.mv .sbar-thumb i{animation:none}}
 
 /* ---------- Small-screen fixes ---------- */
 /* No page may ever scroll sideways (clip, unlike hidden, keeps position:sticky working). */
@@ -919,7 +999,7 @@ html{overflow-x:clip}
       <a class="card tilt tile" href="#myst"><span class="pn z1">MYST</span><p class="z1">Type with your eyes, select with a wink. Webcam only.</p><span class="more z1">Try the keyboard</span></a>
       <a class="card tilt tile" href="#aria"><span class="pn z1">ARIA</span><p class="z1">Pinch the air to switch a fan and a bulb through an ESP32.</p><span class="more z1">Try the simulation</span></a>
       <a class="card tilt tile" href="#quorra"><span class="pn z1">Quorra</span><p class="z1">Dashboards for everyone who runs a college event.</p><span class="more z1">Explore the roles</span></a>
-      <a class="card tilt tile wide" href="#lightlink"><span class="pn z1">Light Link</span><p class="z1">A message sent across the room as blinking light, found and decoded by a webcam. Next: ESP32 and laser.</p><span class="more z1">See how it works</span></a>
+      <a class="card tilt tile wide" href="#lightlink"><div class="ll-tx z1"><span class="pn">Light Link</span><p>A message sent across the room as blinking light, found and decoded by a webcam. No Wi-Fi, no Bluetooth. Next: ESP32 and a laser.</p><span class="more">Try the demo</span></div><div class="ll-vis z1" aria-hidden="true"><span class="ll-d"></span><span class="ll-b"></span><span class="ll-r">HI</span></div></a>
     </div>
   </div>
 </section>
@@ -1002,7 +1082,7 @@ html{overflow-x:clip}
       </div>
     </div>
   </div>
-  <div class="wrap case-next"><a href="#aria"><small>Next project</small><b>ARIA</b></a></div>
+  <div class="wrap case-next"><p class="case-next-h">More projects</p><div class="case-next-grid"><a href="#aria"><small>Project 02</small><b>ARIA</b><span>Hand-gesture control</span></a><a href="#quorra"><small>Project 03</small><b>Quorra</b><span>College events platform</span></a><a href="#lightlink"><small>Project 04</small><b>Light Link</b><span>A message sent as light</span></a></div></div>
 </section>
 
 <!-- ================= ARIA ================= -->
@@ -1065,7 +1145,7 @@ html{overflow-x:clip}
       </div>
     </div>
   </div>
-  <div class="wrap case-next"><a href="#quorra"><small>Next project</small><b>Quorra</b></a></div>
+  <div class="wrap case-next"><p class="case-next-h">More projects</p><div class="case-next-grid"><a href="#myst"><small>Project 01</small><b>MYST</b><span>Eye-gaze keyboard</span></a><a href="#quorra"><small>Project 03</small><b>Quorra</b><span>College events platform</span></a><a href="#lightlink"><small>Project 04</small><b>Light Link</b><span>A message sent as light</span></a></div></div>
 </section>
 
 <!-- ================= QUORRA ================= -->
@@ -1118,11 +1198,11 @@ html{overflow-x:clip}
       </div>
     </div>
   </div>
-  <div class="wrap case-next"><a href="#lightlink"><small>Next project</small><b>Light Link</b></a></div>
+  <div class="wrap case-next"><p class="case-next-h">More projects</p><div class="case-next-grid"><a href="#myst"><small>Project 01</small><b>MYST</b><span>Eye-gaze keyboard</span></a><a href="#aria"><small>Project 02</small><b>ARIA</b><span>Hand-gesture control</span></a><a href="#lightlink"><small>Project 04</small><b>Light Link</b><span>A message sent as light</span></a></div></div>
 </section>
 
 <!-- ================= LIGHT LINK ================= -->
-<section class="prod flip ed band slant case" id="lightlink" data-nav="work" aria-labelledby="ll-h" data-no="06" data-jp="光" data-label="Light Link">
+<section class="prod ed band curve case" id="lightlink" data-nav="work" aria-labelledby="ll-h" data-no="06" data-jp="光" data-label="Light Link">
   <div class="wrap">
     <div class="case-bar"><a class="btn" href="#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>All work</a><span>4 of 4</span></div>
     <div class="prod-head">
@@ -1130,23 +1210,60 @@ html{overflow-x:clip}
         <h2 class="pname" id="ll-h">Light Link</h2>
         <p class="ptag">A message across the room, sent as blinking light.</p>
         <p class="desc">A phone blinks its light. A laptop webcam finds it, follows it and decodes the message. No Wi-Fi, no Bluetooth: light is the only link. This is version 1 of an optical data link I’m building toward an ESP32 and a low-power laser that aims itself.</p>
+        <p class="desc">Try it: type a message, tap Send, and watch the receiver below decode it. The demo runs the real frame format in a simulated camera.</p>
         <dl class="meta"><div><dt>Stack</dt><dd>Python, OpenCV, Kalman filter</dd></div><div><dt>Hardware</dt><dd>Phone, webcam. ESP32 and laser next</dd></div></dl>
-        <div class="cta-row"><a class="btn solid" href="https://github.com/Ai-DuDe/lightlink" target="_blank" rel="noopener">View on GitHub</a><a class="btn" href="https://ai-dude.github.io/lightlink/" target="_blank" rel="noopener">Open the phone page</a></div>
+        <div class="cta-row"><a class="btn solid" href="https://github.com/Ai-DuDe/lightlink" target="_blank" rel="noopener">View on GitHub</a></div>
       </div>
       <div>
-        <div class="card win">
-          <div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">Light Link</span></div>
-          <div class="ll-demo">
-            <div class="ll-stage" role="img" aria-label="A phone blinks a light; the blinks are decoded by a webcam into the message HI">
-              <div class="ll-dev" aria-hidden="true"><span class="ll-dot"></span></div>
-              <div class="ll-beam" aria-hidden="true"></div>
-              <div class="ll-dev ll-out" aria-hidden="true">HI</div>
+        <div class="card win" id="llPhone">
+          <div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">Phone, the sender</span></div>
+          <div class="ll-phone">
+            <div class="ll-device">
+              <div class="ll-notch" aria-hidden="true"><i></i><span class="ll-flash" id="llFlash"></span></div>
+              <div class="ll-scr">
+                <div>
+                  <div class="ll-lab"><label for="llMsg">Message</label><span id="llCount">2 / 32</span></div>
+                  <input id="llMsg" class="ll-in" type="text" value="HI" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div>
+                  <div class="ll-lab"><span id="llTxLab">Bit rate</span></div>
+                  <div class="ll-chips" id="llTxRates" role="group" aria-labelledby="llTxLab"></div>
+                </div>
+                <div class="ll-ring" aria-hidden="true">
+                  <svg viewBox="0 0 120 120"><circle class="ll-trk" cx="60" cy="60" r="54"/><circle class="ll-bar" id="llBar" cx="60" cy="60" r="54"/></svg>
+                  <div class="ll-mid"><b id="llBig">Ready</b><small id="llSm">sends once</small></div>
+                </div>
+                <button class="btn solid ll-send" id="llSend" type="button">Send message</button>
+                <p class="ll-note" id="llTxNote" role="status" aria-live="polite">The light blinks for a few seconds first so the receiver can lock on.</p>
+              </div>
             </div>
-            <div class="ll-frame" role="img" aria-label="Frame layout: preamble 8 bits, sync word 16 bits, length 8 bits, payload, CRC-8 8 bits"><span style="--w:8">Pre</span><span style="--w:16">Sync</span><span style="--w:8">Len</span><span style="--w:16">Data</span><span style="--w:8">CRC</span></div>
-            <p class="ll-legend">The light above sends the real frame for “HI”: preamble, sync word, length, payload, CRC-8, each bit as on-off light.</p>
           </div>
-          <img class="ll-shot" src="assets/lightlink-dashboard.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Receiver dashboard showing state LOCKED, link quality 99, a 4 bit per second rate, a brightness trace and two decoded HI messages">
-          <p class="ll-cap">Receiver dashboard, shown with simulated camera input.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card win ll-rx" id="llRx">
+      <div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">Webcam, the receiver</span><span class="ll-sim">Simulated camera</span></div>
+      <div class="ll-rxgrid">
+        <div class="ll-left">
+          <canvas class="ll-view" id="llView" role="img" aria-label="Simulated camera view: a steady lamp and the blinking phone light, with a box around the tracked light"></canvas>
+          <div class="ll-ctrl">
+            <button class="ll-tog" id="llSpeed" type="button" aria-pressed="true">Time-lapse x4</button>
+            <button class="ll-tog" id="llCorrupt" type="button" aria-pressed="false">Flip one bit next send</button>
+            <button class="ll-tog" id="llReset" type="button">Reset</button>
+          </div>
+        </div>
+        <div class="ll-right">
+          <div class="ll-head"><span class="ll-pill" id="llState" data-s="SEARCHING">SEARCHING</span><span class="ll-q"><b id="llQ">0</b><small>link quality</small></span></div>
+          <div class="ll-qbar" aria-hidden="true"><i id="llQBar"></i></div>
+          <div class="ll-rate">
+            <div><b>Bit rate</b><small>must match the sender</small></div>
+            <div class="ll-step"><button type="button" id="llRxDown" aria-label="Lower receiver bit rate">-</button><output id="llRxRate" aria-live="polite">4 bps</output><button type="button" id="llRxUp" aria-label="Raise receiver bit rate">+</button></div>
+          </div>
+          <dl class="ll-stats"><div><dt>FPS</dt><dd>30</dd></div><div><dt>Valid</dt><dd id="llValid">0</dd></div><div><dt>Failed</dt><dd id="llFailed">0</dd></div></dl>
+          <canvas class="ll-trace" id="llTrace" role="img" aria-label="Brightness of the tracked light over the last seconds, with the decision threshold"></canvas>
+          <ul class="ll-log" id="llLog" aria-label="Decoded messages" aria-live="polite"><li class="ll-empty">Messages appear here.</li></ul>
+          <p class="ll-hint" id="llHint" role="status"></p>
         </div>
       </div>
     </div>
@@ -1154,7 +1271,7 @@ html{overflow-x:clip}
     <div class="feats">
       <div class="card tilt feat"><div class="ic z1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3 class="z1">Verified or nothing</h3><p class="z1">A message appears only if its CRC passes. Failed frames are logged as failed and their text is never shown.</p></div>
       <div class="card tilt feat"><div class="ic z1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3 class="z1">Finds the blinking light</h3><p class="z1">It looks for pixels that change over time, so a steady lamp is ignored, then follows the spot with a Kalman filter.</p></div>
-      <div class="card tilt feat"><div class="ic z1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M4 16h16M9 5l-3 3 3 3M15 13l3 3-3 3"/></svg></div><h3 class="z1">Same bit rate, both ends</h3><p class="z1">Sender and receiver must agree, from 2 to 15 bits per second. Set it on the phone page and on the receiver dashboard.</p></div>
+      <div class="card tilt feat"><div class="ic z1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M4 16h16M9 5l-3 3 3 3M15 13l3 3-3 3"/></svg></div><h3 class="z1">Same bit rate, both ends</h3><p class="z1">Sender and receiver must agree, from 2 to 15 bits per second. Set it on the phone and on the receiver dashboard.</p></div>
     </div>
 
     <div class="prod-foot">
@@ -1178,7 +1295,7 @@ html{overflow-x:clip}
       </div>
     </div>
   </div>
-  <div class="wrap case-next"><a href="#myst"><small>Next project</small><b>MYST</b></a></div>
+  <div class="wrap case-next"><p class="case-next-h">More projects</p><div class="case-next-grid"><a href="#myst"><small>Project 01</small><b>MYST</b><span>Eye-gaze keyboard</span></a><a href="#aria"><small>Project 02</small><b>ARIA</b><span>Hand-gesture control</span></a><a href="#quorra"><small>Project 03</small><b>Quorra</b><span>College events platform</span></a></div></div>
 </section>
 
 <!-- ================= EXPERIENCE ================= -->
@@ -1598,6 +1715,8 @@ var bg=null,bgReact=true;
   function winkS(){var t=0;return{s:function(){th.classList.add('wink');},u:function(dt){t+=dt;rotd=Math.sin(t*5)*5;return t>=1.2;},e:function(){th.classList.remove('wink');rotd=0;}};}
   function scan(){var t=0;return{u:function(dt){t+=dt;rotd=Math.sin(t*4)*28;return t>=2;},e:function(){rotd=0;}};}
   function pinchS(){var t=0,ringed=false;return{s:function(){th.classList.add('pinch');},u:function(dt){t+=dt;if(t>.35&&!ringed){ringed=true;ring(pos.x,pos.y-30);}bobY=-Math.abs(Math.sin(t*6))*3;return t>=1.6;},e:function(){th.classList.remove('pinch');bobY=0;}};}
+  function bitsS(sec){var t=0,n=0;return{s:function(){th.classList.add('rush');},u:function(dt){t+=dt;while(t>=n*.11){n++;emit('txt',pos.x+(Math.random()-.5)*46,pos.y-18-Math.random()*20,Math.random()<.5?'0':'1');}rotd=Math.sin(t*9)*6;bobY=-Math.abs(Math.sin(t*8))*4;return t>=sec;},e:function(){th.classList.remove('rush');rotd=0;bobY=0;}};}
+  function blinkS(){var t=0,on=false,n=0;return{u:function(dt){t+=dt;var k=Math.floor(t/.22);if(k!==n){n=k;on=!on;th.classList.toggle('wink',on);}rotd=Math.sin(t*3)*4;return t>=2.2;},e:function(){th.classList.remove('wink');rotd=0;}};}
   function roles(){return[sayS('Student view.',0),think(1.4),sayS('Coordinator view.',0),wave(1.4),sayS('Manager: approved!',0),clap(5),sayS('Admin: I am the law.',0),stretch(),hush()];}
   function sit(sec){var t=0;return{u:function(dt){t+=dt;var p=Math.min(1,t/.3),q=t>sec-.3?Math.min(1,(t-(sec-.3))/.3):0,e=ease(p)*(1-ease(q));sy=1-.17*e;sx=1+.06*e;rotd=Math.sin(t*1.6)*4*e;bobY=0;return t>=sec;},e:function(){sx=1;sy=1;rotd=0;}};}
   function yawn(){var t=0;return{u:function(dt){t+=dt;var p=t<1?ease(t):(t<1.4?1:Math.max(0,1-(t-1.4)/.5));sy=1+.22*p;sx=1-.08*p;rotd=-6*p;return t>=1.9;},e:function(){sx=1;sy=1;rotd=0;}};}
@@ -1724,6 +1843,9 @@ var bg=null,bgReact=true;
     contact:['Knock knock!','Anyone home? Say hello!','He replies. Probably.','Bring snacks. Or ideas.','Don\'t be shy!','Email him. I\'ll wait.','Say hi, I dare you.'],
     myst:['Eyes up here!','Look left. Now right.','Wink to select. Go on!','Raw gaze is pink. Smoothed is blue.','Blinking is not selecting. Wink!','Filter on, jitter off.','Gaze moves the cursor. Magic.','Type with your eyes. No hands.','I only have hands. Awkward.','I see where you look.'],
     aria:['LED:ON','STATE:LED:ON','Pinch to toggle. Fan on!','Pinch again. Fan off.','ESP32 says hi.','The wire log is talking.','MediaPipe sees my fingers.','I am literally a hand.','Pinch, don\'t punch.','Port 8080, baby.'],
+    lltx:['Tap send. Watch the light.','Every bit gets a flip.','Preamble, sync, length, CRC.','No Wi-Fi. Just photons.','I am a very slow flashlight.','Manchester coding, baby.','Light is the only wire.','Match the bit rate!'],
+    llrx:['The webcam sees me blink.','Locked on. Probably.','CRC says: legit.','Failed frames never show up.','It ignores steady lamps.','Kalman follows the spot.','Tracking the glow.','Bit rates must match!'],
+    llfeat:['Verified or nothing.','No CRC, no message.','Same bit rate. Both ends.','Trust, but verify.'],
     quorra:['Pick a role!','Try all four!','Events, sorted.','40+ endpoints!','React plus Flask.','Forms for everything.','Approvals, approved.','Who runs the event? You.'],
     code:['print("hello, world")','for i in range(9): learn()','while True: create()','sudo make coffee','404: sleep not found','O(n log n), baby','// TODO: touch grass','import brain','if (bug) { cry(); }','def main(): explore()','pip install confidence','git commit -m "genius"'],
     glaze:['Okay, that is genuinely impressive.','I\'m a fan. Officially.','Is there anything he can\'t do?','Somebody frame this.','Legend behaviour.'],
@@ -1740,6 +1862,7 @@ var bg=null,bgReact=true;
     else if(sc==='about'){var cs=QA('#about .facts .card'),tg=['mind','art','hob','loc'];cs.forEach(function(c,i){if(visEl(c,.93))a.push({el:c,fx:.93,tag:tg[i]||'me'});});anchorsIn('#about .portrait',[.2,.5,.8]).forEach(function(x){x.tag='me';a.push(x);});}
     else if(sc==='experience'){[['#exp-cypher',[.9],'cy'],['.cat-cert',[.5],'cert'],['.ring-ctrl',[.5],'cert'],['#ringStage',[.08,.92],'cert']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else if(sc==='contact')a=anchorsIn('#contact .card',[.12,.88]);
+    else if(sc==='lightlink'){[['#llPhone',[.12,.85],'tx'],['#llRx',[.1,.5,.9],'rx'],['#lightlink .feat',[.9],'feat']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else a=anchorsIn('#'+sc+' .win',[.12,.6,.85]).concat(anchorsIn('#'+sc+' .feat',[.9]));
     if(!a.length)a=anchorsIn('.card,.tile,.win,.portrait,.cat-cert,.ring-ctrl,#ringStage,.band',[.92,.5,.08]);
     return a;
@@ -1767,13 +1890,19 @@ var bg=null,bgReact=true;
     else if(sc==='myst')s.push(sayS(line('myst',L.myst),0),pick([function(){return watch(2.8);},winkS,scan,function(){return watch(2.8);}])());
     else if(sc==='aria')s.push(sayS(line('aria',L.aria),0),pinchS(),pick([function(){return tap(fn,2);},pinchS])());
     else if(sc==='quorra'){if(Math.random()<.6)s=s.concat(roles());else s.push(sayS(line('quorra',L.quorra),0),pick([function(){return tap(fn,2);},function(){return clap(4);}])());}
+    else if(sc==='lightlink'){
+      if(tag==='tx')s.push(sayS(line('lltx',L.lltx),0),pick([function(){return tap(fn,3);},blinkS])(),bitsS(1.8));
+      else if(tag==='rx')s.push(sayS(line('llrx',L.llrx),0),pick([function(){return watch(2.6);},scan,function(){return think(1.6);}])());
+      else s.push(sayS(line('llfeat',L.llfeat),0),pick([function(){return clap(4);},function(){return think(1.6);}])());
+    }
     else s.push(sayS(line('any',L.any),0),fun());
     s.push(hush());return s;
   }
   function buildFor(name){return function(n){
     var a=anchorsFor(name),s=[];if(!a.length)return wallLife();
     if(name==='top'&&n===0)s.push(sayS('Hey! I\'m your guide.',1.3),wave(1),sayS('Scroll on. I\'ll show you around.',1.7),hush());
-    if(name==='work'&&n===0)s.push(sayS('Three projects. Watch this!',1.2),hush());
+    if(name==='work'&&n===0)s.push(sayS('Four projects. Watch this!',1.2),hush());
+    if(name==='lightlink'&&n===0)s.push(sayS('Light show! Hit Send.',1.4),hush());
     if(name==='about'&&n===0)s.push(sayS('Meet the human.',1.1),hush());
     if(name==='experience'&&!th.classList.contains('hat'))s.push(hatS(),sayS('Genius mode: ON.',1.3),spin(),hush());
     a=shuffle(a);if(name==='about'&&Math.random()<.65){var fav=a.filter(function(x){return x.tag==='art'||x.tag==='hob';});if(fav.length)a=[fav[0]].concat(a.filter(function(x){return x!==fav[0];}));}
@@ -1791,13 +1920,14 @@ var bg=null,bgReact=true;
     contact:{entry:entryOf(topOf('#contact .card',.88)),build:buildFor('contact')},
     myst:{entry:entryOf(topOf('#myst .win',.12)),build:buildFor('myst')},
     aria:{entry:entryOf(topOf('#aria .win',.12)),build:buildFor('aria')},
-    quorra:{entry:entryOf(topOf('#quorra .win',.12)),build:buildFor('quorra')}
+    quorra:{entry:entryOf(topOf('#quorra .win',.12)),build:buildFor('quorra')},
+    lightlink:{entry:entryOf(topOf('#llPhone',.12)),build:buildFor('lightlink')}
   };
   function cancel(){if(cur&&cur.e)cur.e();cur=null;queue=[];th.classList.remove('run','drum');bobY=0;sx=1;sy=1;if(!onWall)rotd=0;}
   function switchTo(name){
     var sc=SC[name];if(!sc)return;
     var visible=th.classList.contains('on'),q=[];cancel();
-    var sameDoc=!(body.classList.contains('in-case'))===!(SC[scene]&&/myst|aria|quorra/.test(scene));
+    var sameDoc=!(body.classList.contains('in-case'))===!(SC[scene]&&/myst|aria|quorra|lightlink/.test(scene));
     scene=name;loops=0;
     if(visible){var tgt=sc.entry(),dy=Math.abs(tgt.y-pos.y);
       var seen=inView({x:pos.x,y:pos.y});
@@ -1812,7 +1942,7 @@ var bg=null,bgReact=true;
     if(cur&&cur.u(dt)){if(cur.e)cur.e();cur=null;if(pendingReact&&!perch){queue=pendingReact.concat([defer(rebuild)]);pendingReact=null;}}
   }
   function sceneNow(){
-    if(body.classList.contains('in-case')){var id=['myst','aria','quorra'].filter(function(i){var e=$(i);return e&&e.classList.contains('on');})[0];return id||null;}
+    if(body.classList.contains('in-case')){var id=['myst','aria','quorra','lightlink'].filter(function(i){var e=$(i);return e&&e.classList.contains('on');})[0];return id||null;}
     var cy=window.innerHeight*.5,order=[['top','#top'],['work','#work'],['about','#about'],['experience','#experience'],['contact','#contact']];
     for(var i=0;i<order.length;i++){var el=Q(order[i][1]);if(!el)continue;var r=el.getBoundingClientRect();if(r.height&&r.top<=cy&&r.bottom>=cy)return order[i][0];}
     return null;
@@ -2212,6 +2342,7 @@ $('copyMail').addEventListener('click',copyMail);
     {t:'Try the ARIA simulation',ty:'Demo',k:'pinch drag fan bulb toggle wire protocol led relay',to:'screen'},
     {t:'Quorra: college event platform',ty:'Project',k:'react flask mysql events roles dashboard tailwind full stack',to:'quorra'},
     {t:'Light Link: a message sent as light',ty:'Project',k:'optical light blink flashlight phone webcam opencv python kalman manchester crc laser esp32 free space data link',to:'lightlink'},
+    {t:'Try the Light Link demo',ty:'Demo',k:'send message blink light simulation bit rate receiver crc decode phone webcam',to:'llPhone'},
     {t:'Quorra role dashboards',ty:'Demo',k:'student coordinator manager admin spectator',to:'stage3d'},
     {t:'CYPHERMIND, Tech Fest',ty:'Experience',k:'student coordinator reverse prompt engineering challenge event christ college gopika zephyrus tech fest',to:'exp-cypher'},
     {t:'Experience',ty:'Section',k:'experience internship networkz certifications certificates courses',to:'experience'},
@@ -2269,6 +2400,237 @@ $('copyMail').addEventListener('click',copyMail);
     if(e.key==='Escape'&&isOpen)close(true);
   });
 })();
+})();
+</script>
+<div class="sbar" id="sbar" aria-hidden="true"><span class="sbar-thumb" id="sbarThumb"><i></i></span></div>
+<script>
+/* ============ Light Link demo: sender, simulated camera, receiver ============ */
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var sec=$('lightlink');if(!sec||!$('llPhone'))return;
+  var RATES=[2,3,4,5,6,8,10,12,15],FPS=30,LEAD=4,KEEP=100,SYNC=0x2DD4;
+
+  /* ---- the real frame format (protocol/FRAME_SPEC.md) ---- */
+  function crc8(a){var c=0;for(var i=0;i<a.length;i++){c^=a[i];for(var k=0;k<8;k++)c=(c&128)?((c<<1)^7)&255:(c<<1)&255;}return c;}
+  function buildFrame(p){var body=[p.length].concat(p);return[255,SYNC>>8,SYNC&255].concat(body,[crc8(body)]);}
+  function bitsOf(bytes){var b=[];bytes.forEach(function(v){for(var i=7;i>=0;i--)b.push((v>>i)&1);});return b;}
+  function manch(bits){var s=[];bits.forEach(function(v){s.push(v,1-v);});return s;}
+  function toBytes(bits){var o=[];for(var i=0;i+8<=bits.length;i+=8){var v=0;for(var k=0;k<8;k++)v=(v<<1)|bits[i+k];o.push(v);}return o;}
+  var PRE=manch(bitsOf([255,SYNC>>8,SYNC&255]));            /* preamble + sync as 48 symbols */
+  function clamp(x,a,b){return x<a?a:(x>b?b:x);}
+  function gauss(){var u=1-Math.random(),v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+  function setText(el,t){if(el.textContent!==t)el.textContent=t;}
+
+  var tx={rate:4,on:false,done:false,t0:0,Ts:.125,syms:[],total:0,lead:0};
+  var rx={rate:4,T:[],V:[],i0:0,tracked:false,ever:false,cand:-1,edges:[],lastEdge:-99,handled:-1,state:'SEARCHING',
+    valid:0,failed:0,lastValid:-99,lastDur:0,hist:[],q:0,contrast:0,thr:null,prev:null,lastPoll:-99,lostAt:0,gotEvent:false,hinted:false};
+  var sim={t:0,last:0,speed:4,next:0,corrupt:false};
+
+  /* ---- sender (phone) ---- */
+  function level(t){if(!tx.syms.length)return 0;var u=t-tx.t0;if(u<0)return 0;var i=Math.floor(u/tx.Ts);return i<tx.syms.length?tx.syms[i]:0;}
+  function note(t){setText($('llTxNote'),t);}
+  function lockTx(on){$('llMsg').disabled=on;$('llTxRates').querySelectorAll('button').forEach(function(b){b.disabled=on;});}
+  function send(){
+    if(tx.on)return;
+    var bytes=Array.from(new TextEncoder().encode($('llMsg').value));
+    if(!bytes.length||bytes.length>32){note('Type a message of 1 to 32 bytes.');return;}
+    var Ts=1/(2*tx.rate),leadBits=Math.max(8,Math.round(LEAD/(2*Ts))),syms=[],i;
+    for(i=0;i<leadBits;i++)syms.push(1,0);                     /* lead-in: the preamble square wave */
+    var bits=bitsOf(buildFrame(bytes));
+    if(sim.corrupt){bits[32+Math.floor(Math.random()*8*bytes.length)]^=1;sim.corrupt=false;$('llCorrupt').setAttribute('aria-pressed','false');}
+    tx.syms=syms.concat(manch(bits));tx.Ts=Ts;tx.t0=sim.t+.5;tx.total=tx.syms.length*Ts;tx.lead=leadBits*2*Ts;tx.on=true;tx.done=false;
+    rx.gotEvent=false;rx.hinted=false;rx.lostHinted=false;setText($('llHint'),'');
+    lockTx(true);note('Blinking a lead-in first, then the message.');
+  }
+  function finishTx(){tx.on=false;tx.done=true;lockTx(false);note('Sent once. Tap Play again to resend.');}
+
+  /* ---- simulated camera: one brightness sample per frame at the tracked light ---- */
+  function frame(t){
+    var lv=(level(t)+level(t-1/120)+level(t-1/60))/3;              /* exposure smears the edges */
+    var v=(30+150*lv)*(1+.06*Math.sin(t/2.7))+gauss()*3;           /* drift and sensor noise */
+    rx.T.push(t);rx.V.push(v);
+    if(rx.prev!==null&&Math.abs(v-rx.prev)>40){rx.edges.push(t);rx.lastEdge=t;}
+    rx.prev=v;
+    while(rx.edges.length&&rx.edges[0]<t-2)rx.edges.shift();
+    if(!rx.tracked){                                                /* find a source that changes over time */
+      if(rx.edges.length>=6){if(rx.cand<0)rx.cand=t;else if(t-rx.cand>=.8)startTrack();}
+      else if(rx.edges.length<3)rx.cand=-1;
+    }else if(t-rx.lastEdge>6){rx.tracked=false;rx.edges.length=0;rx.lostAt=t;}
+    var extra=rx.T.length-KEEP*FPS;
+    if(extra>0){rx.T.splice(0,extra);rx.V.splice(0,extra);rx.i0=Math.max(0,rx.i0-extra);}
+  }
+  function startTrack(){rx.tracked=true;rx.ever=true;rx.cand=-1;rx.i0=rx.T.length;rx.handled=-1;rx.hist=[];rx.lastValid=-99;}
+
+  /* ---- receiver: threshold, find preamble+sync, read bits, check CRC ---- */
+  function poll(){
+    if(!rx.tracked)return;
+    var T=rx.T,V=rx.V,i0=rx.i0,n=T.length-i0;if(n<FPS*2)return;
+    var s=V.slice(i0).sort(function(a,b){return a-b;}),lo=s[Math.floor(.1*n)],hi=s[Math.floor(.9*n)];
+    rx.contrast=hi-lo;if(hi-lo<12)return;
+    var thr=(hi+lo)/2,sc=(hi-lo)/2,Ts=1/(2*rx.rate),tb=T[i0];rx.thr=thr;
+    function X(t){var f=(t-tb)*FPS,i=Math.floor(f);if(i<0||i>=n-1)return null;var a=f-i;return clamp(((V[i0+i]*(1-a)+V[i0+i+1]*a)-thr)/sc,-1.5,1.5);}
+    function S(tc){var a=X(tc-.2*Ts),b=X(tc),c=X(tc+.2*Ts);return(a===null||b===null||c===null)?null:(a+b+c)/3;}
+    function H(a,b){var q=0;for(var k=0;k<5;k++){var x=X(a+(b-a)*(.25+.125*k));if(x===null)return null;q+=x;}return q/5;}
+    var tEnd=T[T.length-1],best=0,bt=0,k;
+    for(var t0=Math.max(tb,rx.handled);t0+48*Ts<=tEnd;t0+=Ts/8){
+      var num=0,e=0,ok=true;
+      for(k=0;k<48;k++){var v=S(t0+(k+.5)*Ts);if(v===null){ok=false;break;}num+=v*(PRE[k]?1:-1);e+=v*v;}
+      if(!ok||e<1e-6)continue;
+      var c=num/(Math.sqrt(e)*6.9282);
+      if(c>best){best=c;bt=t0;}
+    }
+    if(best<.6)return;                                              /* no preamble+sync at this bit rate */
+    var used=0;
+    function read(cnt){var out=[];for(var q=0;q<cnt;q++){var tt=bt+used*2*Ts,f=H(tt,tt+Ts),g=H(tt+Ts,tt+2*Ts);if(f===null||g===null)return null;used++;out.push(f>g?1:0);}return out;}
+    var head=read(24);if(!head)return;
+    var pe=0,se=0,i;
+    for(i=0;i<8;i++)if(head[i]!==1)pe++;
+    for(i=0;i<16;i++)if(head[8+i]!==((SYNC>>(15-i))&1))se++;
+    if(pe>2||se>0)return;
+    var lb=read(8);if(!lb)return;
+    var len=toBytes(lb)[0];
+    if(len>32){record(false,'bad_length',bt,used*2*Ts,null);return;}
+    var rest=read(8*len+8);if(!rest)return;                         /* frame not finished yet: wait */
+    var bits=lb.concat(rest),body=toBytes(bits.slice(0,8+8*len)),got=toBytes(bits.slice(8+8*len))[0];
+    if(crc8(body)===got)record(true,'ok',bt,used*2*Ts,body.slice(1));else record(false,'bad_crc',bt,used*2*Ts,null);
+  }
+  function record(ok,why,t,dur,payload){
+    rx.handled=t+dur;rx.gotEvent=true;rx.hist.push(ok);if(rx.hist.length>5)rx.hist.shift();
+    var log=$('llLog'),first=log.querySelector('.ll-empty');if(first)first.remove();
+    var li=document.createElement('li'),tag=document.createElement('span'),b=document.createElement('b'),sm=document.createElement('small');
+    tag.textContent=ok?'OK':'FAIL';
+    /* only a CRC-verified payload is ever turned into text; a failed frame shows its reason, never its content */
+    b.textContent=ok?new TextDecoder('utf-8',{fatal:false}).decode(new Uint8Array(payload)):why;
+    sm.textContent=t.toFixed(0)+'s';
+    if(!ok)li.className='f';
+    li.appendChild(tag);li.appendChild(b);li.appendChild(sm);log.insertBefore(li,log.firstChild);
+    while(log.children.length>4)log.removeChild(log.lastChild);
+    if(ok){rx.valid++;rx.lastValid=t+dur;rx.lastDur=dur;}else rx.failed++;
+  }
+  function state(){
+    var t=sim.t,win=rx.lastDur?2.5*(rx.lastDur+1):0,recent=(t-rx.lastValid)<=win;
+    var contrast=clamp(rx.contrast/50,0,1),trk=rx.tracked?clamp(1-(t-rx.lastEdge)/6,0,1):0;
+    var pass=rx.hist.length?rx.hist.filter(Boolean).length/rx.hist.length:0;
+    rx.q=100*(.25*contrast+.25*trk+.3*(recent?pass:0)+.2);        /* clipping and dropped frames count as clean here */
+    var s;
+    if(!rx.tracked){s=(rx.ever&&t-rx.lostAt<5)?'LOST':'SEARCHING';rx.q=0;}
+    else s=(recent&&rx.q>=65)?'LOCKED':'DEGRADED';                  /* a new track starts DEGRADED: move up slowly */
+    rx.state=s;
+    if(s==='LOST'&&rx.valid&&!rx.lostHinted){rx.lostHinted=true;setText($('llHint'),'The light stopped, so the receiver let go of it. The decoded message stays in the log.');}
+    if(!tx.on&&tx.done&&!rx.gotEvent&&!rx.hinted&&t>tx.t0+tx.total+2.5){
+      rx.hinted=true;
+      setText($('llHint'),rx.rate!==tx.rate?'Nothing decoded. The sender is at '+tx.rate+' bps and the receiver at '+rx.rate+' bps: they must match.':'Nothing decoded yet. Try sending again.');
+    }
+  }
+
+  /* ---- drawing ---- */
+  var col=null,colAt=0;
+  function colors(){
+    var now=performance.now();if(col&&now-colAt<600)return col;colAt=now;
+    var cs=getComputedStyle(document.documentElement),g=function(n,f){return(cs.getPropertyValue(n)||'').trim()||f;};
+    return col={text:g('--text','#eee'),faint:g('--faint','#888'),line:g('--line','#333'),pink:g('--pink','#eee')};
+  }
+  function fit(c){
+    var d=Math.min(window.devicePixelRatio||1,2),w=c.clientWidth,h=c.clientHeight;if(!w||!h)return null;
+    if(c.width!==Math.round(w*d)||c.height!==Math.round(h*d)){c.width=Math.round(w*d);c.height=Math.round(h*d);}
+    var x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);return{x:x,w:w,h:h};
+  }
+  function glow(x,px,py,r,a){var g=x.createRadialGradient(px,py,0,px,py,r);g.addColorStop(0,'rgba(255,255,255,'+a+')');g.addColorStop(.35,'rgba(255,255,255,'+a*.35+')');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.beginPath();x.arc(px,py,r,0,7);x.fill();}
+  function drawView(){
+    var f=fit($('llView'));if(!f)return;var x=f.x,w=f.w,h=f.h,C=colors();
+    x.fillStyle='#050505';x.fillRect(0,0,w,h);
+    glow(x,w*.24,h*.34,w*.06,.55);                                   /* a steady lamp: it must be ignored */
+    var last=rx.V.length?rx.V[rx.V.length-1]:30,b=clamp((last-30)/150,0,1),sx=w*.64,sy=h*.5;
+    glow(x,sx,sy,w*(.012+.03*b),.12+.88*b);
+    if(rx.tracked){
+      var r=w*.045,L=w*.016;x.strokeStyle=C.pink;x.lineWidth=2;
+      [[-1,-1],[1,-1],[-1,1],[1,1]].forEach(function(q){var ax=sx+q[0]*r,ay=sy+q[1]*r;x.beginPath();x.moveTo(ax-q[0]*L,ay);x.lineTo(ax,ay);x.lineTo(ax,ay-q[1]*L);x.stroke();});
+    }
+    x.fillStyle='rgba(255,255,255,.55)';x.font='600 '+Math.max(10,Math.round(w*.022))+'px system-ui,sans-serif';x.fillText('SIMULATED CAMERA  '+FPS+' fps',12,h-12);
+  }
+  function drawTrace(){
+    var f=fit($('llTrace'));if(!f)return;var x=f.x,w=f.w,h=f.h,C=colors();x.clearRect(0,0,w,h);
+    var span=12,t1=sim.t,i=rx.T.length-1;if(i<2)return;
+    x.strokeStyle=C.text;x.lineWidth=1.4;x.beginPath();var started=false;
+    for(;i>=0&&rx.T[i]>=t1-span;i--){
+      var px=w-(t1-rx.T[i])/span*w,py=h-6-clamp((rx.V[i]-20)/180,0,1)*(h-12);
+      if(!started){x.moveTo(px,py);started=true;}else x.lineTo(px,py);
+    }
+    x.stroke();
+    if(rx.thr!==null&&rx.tracked){var ty=h-6-clamp((rx.thr-20)/180,0,1)*(h-12);x.strokeStyle=C.faint;x.setLineDash([5,5]);x.beginPath();x.moveTo(0,ty);x.lineTo(w,ty);x.stroke();x.setLineDash([]);}
+  }
+  function ui(){
+    var u=sim.t-tx.t0,frac=0,big='Ready',sm='sends once';
+    if(tx.on){frac=clamp(u/tx.total,0,1);
+      if(u<0){big='Get ready';sm='';}
+      else if(u<tx.lead){big='Lead-in';sm='receiver locking on';}
+      else{big=Math.max(0,Math.ceil(tx.total-u))+' s';sm='sending';}}
+    else if(tx.done){frac=1;big='Sent';sm='once';}
+    $('llBar').style.strokeDashoffset=String(339.3*(1-frac));
+    setText($('llBig'),big);setText($('llSm'),sm);
+    setText($('llSend'),tx.on?'Sending...':(tx.done?'Play again':'Send message'));$('llSend').disabled=tx.on;
+    setText($('llCount'),(new TextEncoder().encode($('llMsg').value).length)+' / 32');
+    $('llFlash').style.setProperty('--on',tx.on?String(level(sim.t)):'0');
+    var st=$('llState');setText(st,rx.state);if(st.dataset.s!==rx.state)st.dataset.s=rx.state;
+    setText($('llQ'),String(Math.round(rx.q)));$('llQBar').style.width=Math.round(rx.q)+'%';
+    setText($('llRxRate'),rx.rate+' bps');setText($('llValid'),String(rx.valid));setText($('llFailed'),String(rx.failed));
+  }
+  function loop(ms){
+    requestAnimationFrame(loop);
+    if(document.hidden||!sec.classList.contains('on')){sim.last=0;return;}
+    if(!sim.last){sim.last=ms;return;}
+    var dt=Math.min(.05,(ms-sim.last)/1000);sim.last=ms;sim.t+=dt*sim.speed;
+    while(sim.next<=sim.t){frame(sim.next);sim.next+=1/FPS;}
+    if(tx.on&&sim.t>tx.t0+tx.total+.3)finishTx();
+    if(sim.t-rx.lastPoll>=.5){rx.lastPoll=sim.t;poll();}
+    state();ui();drawView();drawTrace();
+  }
+
+  /* ---- controls ---- */
+  function chips(){
+    var box=$('llTxRates');
+    RATES.forEach(function(r){var b=document.createElement('button');b.type='button';b.className='ll-chip';b.textContent=r;b.setAttribute('aria-pressed',String(r===tx.rate));
+      b.onclick=function(){if(tx.on)return;tx.rate=r;box.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-pressed',String(o===b));});};box.appendChild(b);});
+  }
+  function stepRx(d){
+    var i=RATES.indexOf(rx.rate)+d;if(i<0||i>=RATES.length)return;
+    rx.rate=RATES[i];rx.i0=rx.T.length;rx.handled=-1;rx.hist=[];rx.lastValid=-99;     /* new rate: restart the decoder */
+    rx.hinted=false;setText($('llHint'),'');
+  }
+  function reset(){
+    tx.on=false;tx.done=false;tx.syms=[];lockTx(false);note('The light blinks for a few seconds first so the receiver can lock on.');
+    rx.T=[];rx.V=[];rx.i0=0;rx.tracked=false;rx.ever=false;rx.cand=-1;rx.edges=[];rx.handled=-1;rx.valid=0;rx.failed=0;rx.lastValid=-99;rx.hist=[];rx.q=0;rx.contrast=0;rx.thr=null;rx.prev=null;rx.gotEvent=false;rx.hinted=false;rx.lostHinted=false;
+    var log=$('llLog');log.textContent='';var li=document.createElement('li');li.className='ll-empty';li.textContent='Messages appear here.';log.appendChild(li);setText($('llHint'),'');
+  }
+  chips();
+  $('llSend').onclick=send;
+  $('llMsg').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();send();}});
+  $('llMsg').addEventListener('input',function(){if(tx.done){tx.done=false;}});
+  $('llRxDown').onclick=function(){stepRx(-1);};$('llRxUp').onclick=function(){stepRx(1);};
+  $('llSpeed').onclick=function(){var p=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',String(p));sim.speed=p?4:1;};
+  $('llCorrupt').onclick=function(){var p=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',String(p));sim.corrupt=p;};
+  $('llReset').onclick=reset;
+  requestAnimationFrame(loop);
+})();
+
+/* ============ Scroll thumb: replaces the native scrollbar ============ */
+(function(){
+  var bar=document.getElementById('sbar'),th=document.getElementById('sbarThumb');if(!bar||!th)return;
+  var de=document.documentElement,dragging=false,grab=0,idle=0;
+  function m(){var max=Math.max(0,de.scrollHeight-window.innerHeight);return{max:max,trk:Math.max(1,bar.clientHeight-th.offsetHeight),h:th.offsetHeight};}
+  function place(){var k=m();bar.hidden=k.max<=8;if(bar.hidden)return;th.style.transform='translateY('+Math.round(clamp(window.scrollY/k.max,0,1)*k.trk)+'px)';}
+  function clamp(x,a,b){return x<a?a:(x>b?b:x);}
+  function poke(){bar.classList.add('on','mv');clearTimeout(idle);idle=setTimeout(function(){bar.classList.remove('on','mv');},1100);}
+  window.addEventListener('scroll',function(){place();poke();},{passive:true});
+  window.addEventListener('resize',place);
+  window.addEventListener('hashchange',function(){setTimeout(place,120);});
+  if('ResizeObserver' in window)new ResizeObserver(place).observe(document.body);
+  th.addEventListener('pointerdown',function(e){dragging=true;bar.classList.add('drag');th.setPointerCapture(e.pointerId);grab=e.clientY-th.getBoundingClientRect().top;e.preventDefault();});
+  th.addEventListener('pointermove',function(e){if(!dragging)return;var k=m(),y=e.clientY-bar.getBoundingClientRect().top-grab;window.scrollTo({top:clamp(y/k.trk,0,1)*k.max,behavior:'instant'});});
+  function up(){dragging=false;bar.classList.remove('drag');}
+  th.addEventListener('pointerup',up);th.addEventListener('pointercancel',up);
+  bar.addEventListener('pointerdown',function(e){if(e.target===th||th.contains(e.target))return;var k=m(),y=e.clientY-bar.getBoundingClientRect().top-k.h/2;window.scrollTo({top:clamp(y/k.trk,0,1)*k.max,behavior:'smooth'});});
+  place();
 })();
 </script>
 </body>
