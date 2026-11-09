@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-ebtbEST8SIozB3hGY8zz+cM/DKAz+yY6/SbTaFwPvkg=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg=' ; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-DHqUlxC7jRYoWJ0OFsI+ewSm2PNGCRx4n8tYYpPCEFY=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg=' ; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23EDEDE8'%3ED%3C/text%3E%3C/svg%3E">
@@ -1072,8 +1072,8 @@ html{overflow-x:clip}
       <p class="tools"><strong>Working with:</strong> Python, OpenCV, MediaPipe, Pygame, React, Flask, MySQL, C. <strong>Exploring:</strong> Docker and neural networks.</p>
       <dl class="facts">
         <div class="card tilt"><dt class="z1">Mindset</dt><dd class="z1">Explore fearlessly. Think differently. Create relentlessly. Learn endlessly.</dd></div>
-        <div class="card tilt"><dt class="z1">Art</dt><dd class="z1">Something I love. I draw whenever I get the chance.</dd></div>
-        <div class="card tilt"><dt class="z1">Hobbies</dt><dd class="z1">Polymathy, music, curiosity.</dd></div>
+        <div class="card tilt"><dt class="z1">Hobbies</dt><dd class="z1">Drawing, music, and curiosity.</dd></div>
+        <div class="card tilt"><dt class="z1">Motto</dt><dd class="z1">Jack of all trades, master of none, but oftentimes better than a master of one.</dd></div>
         <div class="card tilt"><dt class="z1">Based in</dt><dd class="z1">Thrissur, Kerala, India. Christ College (Autonomous), Irinjalakuda.</dd></div>
       </dl>
     </div>
@@ -1964,7 +1964,7 @@ var bg=null,bgReact=true;
     hero:['Hey! I\'m your guide.','I work for free. Mostly.','Psst. Scroll down.','Yes, I\'m a hand. Keep up.','Five fingers, zero bugs.','I give the best high fives.','Scroll on. I\'ll show you around.'],
     cat:['Hi, kitty.','The cat is my coworker.','We\'re besties.','It keeps staring at me.','Don\'t tell it I\'m here.'],
     work:['Click this','Psst, click this','This one!','Click me','Go on, click this','Best one. Trust me.','Ooh, this one.','I\'d click it.'],
-    about:['He DRAWS?! Wow, an artist!','Polymath AND music?! Legend!!','Explore fearlessly? Love that.','Thrissur! Lovely place!','Art AND code? Unfair!','Hire this person. Just saying.','Curiosity is a superpower.','Okay but seriously talented.','I\'m not crying, you are.','Ten out of ten. Five fingers up.'],
+    about:['He DRAWS?! Wow, an artist!','Jack of all trades? Legend!!','Explore fearlessly? Love that.','Thrissur! Lovely place!','Art AND code? Unfair!','Hire this person. Just saying.','Curiosity is a superpower.','Okay but seriously talented.','I\'m not crying, you are.','Ten out of ten. Five fingers up.'],
     eq:['E = mc²','F = ma','ΔxΔp ≥ ħ/2','∇·E = ρ/ε₀','e^{iπ} + 1 = 0','a² + b² = c²','S = k ln W','H|ψ⟩ = E|ψ⟩'],
     quip:['Akshually…','Entropy always wins.','Quantum, but make it portfolio.','I read the manual. Twice.','Peer review? I AM the peer.','Certified. Literally.','Schrödinger says hi. Maybe.','Physics is just vibes with math.'],
     contact:['Knock knock!','Anyone home? Say hello!','He replies. Probably.','Bring snacks. Or ideas.','Don\'t be shy!','Email him. I\'ll wait.','Say hi, I dare you.'],
@@ -1994,7 +1994,7 @@ var bg=null,bgReact=true;
     var a=[];
     if(sc==='top'){if(Q('#cat'))[catHead,catFloor(.08),catFloor(.9)].forEach(function(f){if(inView(f()))a.push({fn:f});});}
     else if(sc==='work')a=anchorsIn('#work .tile',[.2,.5,.8]);
-    else if(sc==='about'){var cs=QA('#about .facts .card'),tg=['mind','art','hob','loc'];cs.forEach(function(c,i){if(visEl(c,.93))a.push({el:c,fx:.93,tag:tg[i]||'me'});});anchorsIn('#about .portrait',[.2,.5,.8]).forEach(function(x){x.tag='me';a.push(x);});}
+    else if(sc==='about'){var cs=QA('#about .facts .card'),tg=['mind','hob','motto','loc'];cs.forEach(function(c,i){if(visEl(c,.93))a.push({el:c,fx:.93,tag:tg[i]||'me'});});anchorsIn('#about .portrait',[.2,.5,.8]).forEach(function(x){x.tag='me';a.push(x);});}
     else if(sc==='experience'){[['#exp-cypher',[.9],'cy'],['.cat-cert',[.5],'cert'],['.ring-ctrl',[.5],'cert'],['#ringStage',[.08,.92],'cert']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else if(sc==='contact')a=anchorsIn('#contact .card',[.12,.88]);
     else if(sc==='aira'){[['#aiWin',[.12,.85],'mon'],['#aira .feat',[.9],'feat']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});[['#aira .prod-foot .card:first-child',[.1,.9],'res'],['#aira .prod-foot .card:last-child',[.1,.9],'next']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
@@ -2004,7 +2004,7 @@ var bg=null,bgReact=true;
     return a;
   }
   L.mix=L.eq.concat(L.code);
-  var GL={mind:['Explore fearlessly? Love that.','Think differently. Create relentlessly. Iconic.','Learn endlessly? A true nerd. Respect.'],art:['He DRAWS?! Wow, an artist!','Art AND code? Unfair!','Sketches AND neural nets. Show-off.'],hob:['Polymath AND music?! Legend!!','Hobbies? Absolutely iconic.','Curiosity is a superpower.'],loc:['Thrissur! Lovely place!','Christ College represent!','Kerala, the best.'],me:['Okay but seriously talented.','Hire this person. Just saying.','Ten out of ten. Five fingers up.','I\'m not crying, you are.']};
+  var GL={mind:['Explore fearlessly? Love that.','Think differently. Create relentlessly. Iconic.','Learn endlessly? A true nerd. Respect.'],hob:['He DRAWS?! Wow, an artist!','Art AND code? Unfair!','Curiosity is a superpower.'],motto:['Master of none? Master of vibes.','Better than a master of one. Facts.','A bit of everything. Respect.'],loc:['Thrissur! Lovely place!','Christ College represent!','Kerala, the best.'],me:['Okay but seriously talented.','Hire this person. Just saying.','Ten out of ten. Five fingers up.','I\'m not crying, you are.']};
   function ptOf(a){return a.fn?a.fn:T(a.el,a.fx);}
   function cardCenter(a){return function(){var r=R(a.el);return{x:r.l+r.w*.5,y:r.t+r.h*.5};};}
   function act(sc,fn,a){
@@ -2014,7 +2014,7 @@ var bg=null,bgReact=true;
     else if(sc==='about'){
       tag=tag||'me';s.push(sayS(line('g-'+tag,GL[tag]),0));
       if(tag!=='me')s.push(point(cardCenter(a)));
-      if(tag==='art'||tag==='hob')s.push(burst('heart',12,null),clap(6),sayS(line('glaze',L.glaze),0),dance(1.2),burst('heart',8,null));
+      if(tag==='hob'||tag==='motto')s.push(burst('heart',12,null),clap(6),sayS(line('glaze',L.glaze),0),dance(1.2),burst('heart',8,null));
       else if(tag==='me')s.push(burst('star',7,null),pick([function(){return clap(5);},function(){return wave(1.2);}])());
       else s.push(burst('star',6,null),clap(4));
     }
