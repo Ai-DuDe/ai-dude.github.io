@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-B0gGuy49KHxryiB7uH4HYK/khXqJ3ZZgV87Yfumfa7E=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg=' ; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-ebtbEST8SIozB3hGY8zz+cM/DKAz+yY6/SbTaFwPvkg=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg=' ; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23EDEDE8'%3ED%3C/text%3E%3C/svg%3E">
@@ -1413,6 +1413,7 @@ html{overflow-x:clip}
         <ul class="flowd">
           <li><b>Infrared</b><span>A night-vision camera so it works in darkness</span></li>
           <li><b>Thermal</b><span>To catch obstructive apnea, when the chest moves but no air flows</span></li>
+          <li><b>Mattress pad</b><span>A second sensor under the cot, so it keeps working under blankets</span></li>
         </ul>
         <p style="margin:.9rem 0 0;font-size:.93rem">Today it is built on a laptop and its webcam.</p>
       </div>
@@ -1972,6 +1973,13 @@ var bg=null,bgReact=true;
     lltx:['Tap send. Watch the light.','Every bit gets a flip.','Preamble, sync, length, CRC.','No Wi-Fi. Just photons.','I am a very slow flashlight.','Manchester coding, baby.','Light is the only wire.','Match the bit rate!'],
     llrx:['The webcam sees me blink.','Locked on. Probably.','CRC says: legit.','Failed frames never show up.','It ignores steady lamps.','Kalman follows the spot.','Tracking the glow.','Bit rates must match!'],
     aira:['Still breathing? Good.','Twenty seconds. Then the alarm.','No wires on tiny skin.','Hold your breath. I dare you.','Counting every breath.'],
+    aimon:['Press Hold breath. I dare you.','That wave is a chest moving.','Optical flow sees tiny motion.','Every breath resets the clock.','Warn at 15. Alarm at 20.','40 breaths a minute. Tiny lungs.'],
+    aihold:['Not breathing? Clock is running.','Tick, tock. Fifteen is close.','Hold it... hold it...'],
+    aiwarn:['Fifteen seconds! Uh oh.','Warning! Breathe, please.','Nurse might want to look.'],
+    aialarm:['ALARM! Hit Confirm.','Twenty seconds. Someone come!','Confirm it, then I breathe.'],
+    aifeat:['Every breath, counted.','A kick is not a breath.','Cannot see? It says so.','No wires on tiny skin.','On its side? Still works.'],
+    aires:['88% of breaths found.','They said 40. AIRA said 39 to 41.','Zero false alarms. 63 clips.','Babies it never met.','Heart rate is beta. Shh.'],
+    ainext:['Next: see in the dark.','Thermal sees warm breath.','Blocked airway? Thermal knows.','A pad under the mattress, too.','All this on a laptop webcam.'],
     llfeat:['Verified or nothing.','No CRC, no message.','Same bit rate. Both ends.','Trust, but verify.'],
     quorra:['Pick a role!','Try all four!','Events, sorted.','40+ endpoints!','React plus Flask.','Forms for everything.','Approvals, approved.','Who runs the event? You.'],
     code:['print("hello, world")','for i in range(9): learn()','while True: create()','sudo make coffee','404: sleep not found','O(n log n), baby','// TODO: touch grass','import brain','if (bug) { cry(); }','def main(): explore()','pip install confidence','git commit -m "genius"'],
@@ -1989,6 +1997,7 @@ var bg=null,bgReact=true;
     else if(sc==='about'){var cs=QA('#about .facts .card'),tg=['mind','art','hob','loc'];cs.forEach(function(c,i){if(visEl(c,.93))a.push({el:c,fx:.93,tag:tg[i]||'me'});});anchorsIn('#about .portrait',[.2,.5,.8]).forEach(function(x){x.tag='me';a.push(x);});}
     else if(sc==='experience'){[['#exp-cypher',[.9],'cy'],['.cat-cert',[.5],'cert'],['.ring-ctrl',[.5],'cert'],['#ringStage',[.08,.92],'cert']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else if(sc==='contact')a=anchorsIn('#contact .card',[.12,.88]);
+    else if(sc==='aira'){[['#aiWin',[.12,.85],'mon'],['#aira .feat',[.9],'feat']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});[['#aira .prod-foot .card:first-child',[.1,.9],'res'],['#aira .prod-foot .card:last-child',[.1,.9],'next']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else if(sc==='lightlink'){[['#llPhone',[.12,.85],'tx'],['#llRx',[.1,.5,.9],'rx'],['#lightlink .feat',[.9],'feat']].forEach(function(r){anchorsIn(r[0],r[1]).forEach(function(x){x.tag=r[2];a.push(x);});});}
     else a=anchorsIn('#'+sc+' .win',[.12,.6,.85]).concat(anchorsIn('#'+sc+' .feat',[.9]));
     if(!a.length)a=anchorsIn('.card,.tile,.win,.portrait,.cat-cert,.ring-ctrl,#ringStage,.band',[.92,.5,.08]);
@@ -2022,7 +2031,14 @@ var bg=null,bgReact=true;
       else if(tag==='rx')s.push(sayS(line('llrx',L.llrx),0),pick([function(){return watch(2.6);},scan,function(){return think(1.6);}])());
       else s.push(sayS(line('llfeat',L.llfeat),0),pick([function(){return clap(4);},function(){return think(1.6);}])());
     }
-    else if(sc==='aira')s.push(sayS(line('aira',L.aira),0),pick([function(){return watch(2.6);},function(){return think(1.6);},function(){return tap(fn,2);}])());
+    else if(sc==='aira'){
+      if(tag==='mon'){var stx=(($('aiStatus')||{}).textContent||''),hold=/Resume/.test((($('aiHold')||{}).textContent||'')),k=/ALARM/.test(stx)?'aialarm':/Warning/.test(stx)?'aiwarn':hold?'aihold':'aimon';
+        s.push(sayS(line(k,L[k]),0),k==='aialarm'?blinkS():pick([function(){return watch(2.6);},function(){return tap(fn,2);}])());}
+      else if(tag==='feat')s.push(sayS(line('aifeat',L.aifeat),0),pick([function(){return clap(4);},function(){return think(1.6);}])());
+      else if(tag==='res')s.push(sayS(line('aires',L.aires),0),pick([function(){return clap(4);},function(){return tap(fn,2);}])());
+      else if(tag==='next')s.push(sayS(line('ainext',L.ainext),0),pick([function(){return think(1.6);},function(){return watch(2.4);}])());
+      else s.push(sayS(line('aira',L.aira),0),pick([function(){return watch(2.6);},function(){return think(1.6);}])());
+    }
     else s.push(sayS(line('any',L.any),0),fun());
     s.push(hush());return s;
   }
