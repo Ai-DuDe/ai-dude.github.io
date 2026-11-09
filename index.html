@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-Su9ybBgrn4NsaDVwyEhYHSGu1wfyAYQxibahn5JuMas=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-zgyTU3kzzc4VShsrZTxLkkVjBtUhj5+cZUZ9teLE87I=' 'sha256-Wgh41A5h7+PzhLRB4x2FbJCeJ1usxmDsBdrKYUNcU6k=' 'sha256-MWYOhHY9k9cgVNmAPaLfsVInUICVjPbGzbYI81DlUgg=' ; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; manifest-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0A0A0B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23EDEDE8'%3ED%3C/text%3E%3C/svg%3E">
@@ -895,6 +895,16 @@ html{overflow-x:clip}
   .sheet{width:76%;left:2%;padding:16px 16px;transform:translate3d(calc(var(--d,0)*16px),calc(var(--d,0)*-22px),calc(var(--d,0)*-90px))}
   .sheet h3{font-size:1.2rem}
 }
+
+/* phones: the guide floats over the page (never part of page layout), nav fits the screen */
+@media (hover:none),(pointer:coarse){html,body{overflow-anchor:none}.thing{position:fixed;overflow-anchor:none}}
+@media (max-width:600px){
+  .nav{gap:3px;padding:4px}
+  .logo{width:34px;height:34px;font-size:1rem}
+  .nav-links a{padding:8px 9px;font-size:.84rem}
+  .dna-wrap{width:52px;margin:0 2px}
+}
+@media (max-width:370px){.dna-wrap{display:none}.nav-links a{padding:8px 8px}}
 </style>
 </head>
 <body>
@@ -1762,7 +1772,7 @@ var bg=null,bgReact=true;
   function put(){
     var vb=musicOn?vibe:0,x,y,par=th.parentNode;
     if(par!==body){var dr=par.getBoundingClientRect();x=(pos.x-sX())-dr.left-Wd()/2;y=(pos.y-sY())+bobY+vb*4-dr.top-Hd();}
-    else{x=pos.x-Wd()/2;y=pos.y+bobY+vb*4-Hd();if(TOUCH&&docH)y=Math.min(y,docH-Hd()-12);}
+    else{x=pos.x-Wd()/2;y=pos.y+bobY+vb*4-Hd();if(TOUCH&&docH)y=Math.min(y,docH-Hd()-12);if(TOUCH){x-=sX();y-=sY();}}
     th.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)';flip.style.setProperty('--dir',dir);
     rotEl.style.setProperty('--rot',(rotd+vibeSign*vb*5).toFixed(1)+'deg');rotEl.style.setProperty('--k',kk.toFixed(3));
     svgEl.style.setProperty('--sx',(sx*(1+vb*.05)).toFixed(3));svgEl.style.setProperty('--sy',(sy*(1-vb*.07)).toFixed(3));
