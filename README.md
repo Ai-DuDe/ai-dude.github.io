@@ -1,6 +1,6 @@
 # Diuthendrh R D | Portfolio
 
-Personal portfolio: computer vision and machine learning projects (MYST, ARIA, Quorra), certifications and contact.
+Personal portfolio: computer vision and machine learning projects (MYST, ARIA, Quorra, Light Link, AIRA), certifications and contact.
 
 Live: https://ai-dude.github.io/
 
